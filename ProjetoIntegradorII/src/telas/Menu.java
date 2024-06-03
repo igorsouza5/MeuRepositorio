@@ -40,18 +40,20 @@ public class Menu extends javax.swing.JFrame {
         itmAlterarJogadores = new javax.swing.JMenuItem();
         mnuTimes = new javax.swing.JMenu();
         itmListarTimes = new javax.swing.JMenuItem();
-        mnuAjuda = new javax.swing.JMenu();
-        itmInstrucoes = new javax.swing.JMenuItem();
-        itmSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Squad Select");
         setSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(null);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/telas/OIG3.png"))); // NOI18N
         Fundo.setText("jLabel2");
+        Fundo.setToolTipText("");
+        Fundo.setName(""); // NOI18N
         getContentPane().add(Fundo);
         Fundo.setBounds(0, 0, 600, 600);
+
+        jMenuBar1.setToolTipText("");
 
         mnuJogadores.setText("Jogadores");
 
@@ -93,19 +95,9 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuTimes);
 
-        mnuAjuda.setText("Ajuda");
-
-        itmInstrucoes.setText("Instruções de uso");
-        mnuAjuda.add(itmInstrucoes);
-
-        itmSobre.setText("Sobre");
-        mnuAjuda.add(itmSobre);
-
-        jMenuBar1.add(mnuAjuda);
-
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(619, 632));
+        setSize(new java.awt.Dimension(618, 632));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -183,11 +175,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmAlterarJogadores;
     private javax.swing.JMenuItem itmCadastrarJogadores;
     private javax.swing.JMenuItem itmExcluirJogadores;
-    private javax.swing.JMenuItem itmInstrucoes;
     private javax.swing.JMenuItem itmListarTimes;
-    private javax.swing.JMenuItem itmSobre;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu mnuAjuda;
     private javax.swing.JMenu mnuJogadores;
     private javax.swing.JMenu mnuTimes;
     // End of variables declaration//GEN-END:variables

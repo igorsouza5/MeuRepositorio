@@ -54,13 +54,6 @@ public class ListarJogadores extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaListar = new javax.swing.JTable();
-        cmbPosicao = new javax.swing.JComboBox<>();
-        cmbTime = new javax.swing.JComboBox<>();
-        txtNome = new javax.swing.JTextField();
-        lblNome = new javax.swing.JLabel();
-        lblTime = new javax.swing.JLabel();
-        lblPosicao = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Listar Jogadores");
@@ -80,75 +73,11 @@ public class ListarJogadores extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelaListar);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(2, 100, 670, 240);
-
-        cmbPosicao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Goleiro", "Defensor / Fixo", "Meio Campo / Ala", "Ataque / Pivô" }));
-        getContentPane().add(cmbPosicao);
-        cmbPosicao.setBounds(450, 12, 131, 40);
-
-        cmbTime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time A", "Time B", "Time C", "Time D" }));
-        getContentPane().add(cmbTime);
-        cmbTime.setBounds(260, 12, 72, 40);
-
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtNome);
-        txtNome.setBounds(81, 12, 90, 40);
-
-        lblNome.setText("Nome");
-        getContentPane().add(lblNome);
-        lblNome.setBounds(30, 26, 50, 20);
-
-        lblTime.setText("Time");
-        getContentPane().add(lblTime);
-        lblTime.setBounds(200, 30, 60, 16);
-
-        lblPosicao.setText("Posição");
-        getContentPane().add(lblPosicao);
-        lblPosicao.setBounds(390, 30, 60, 16);
-
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnBuscar);
-        btnBuscar.setBounds(600, 20, 70, 30);
+        jScrollPane1.setBounds(2, 0, 670, 340);
 
         setSize(new java.awt.Dimension(691, 349));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String n, p, t;
-        n = txtNome.getText();
-        p = cmbPosicao.getSelectedItem().toString();
-        t = cmbTime.getSelectedItem().toString();
-        
-        try{
-            ResultSet resultado = new Dao().listarNome(n, t, p);
-            DefaultTableModel tblModelo = (DefaultTableModel) tabelaListar.getModel();
-            tblModelo.setRowCount(0);
-            
-            
-            while (resultado.next()){
-                String [] linha = {resultado.getString("nome"),
-                resultado.getString("posicao"),
-                resultado.getString("time")};
-                tblModelo.addRow(linha);
-            } 
-        }catch(ClassNotFoundException|SQLException ex){
-            JOptionPane.showMessageDialog(null,"Entre em contato com o suporte e informe o erro" + ex.getMessage());
-        }
-    }//GEN-LAST:event_btnBuscarActionPerformed
-
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,14 +115,7 @@ public class ListarJogadores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JComboBox<String> cmbPosicao;
-    private javax.swing.JComboBox<String> cmbTime;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblNome;
-    private javax.swing.JLabel lblPosicao;
-    private javax.swing.JLabel lblTime;
     private javax.swing.JTable tabelaListar;
-    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
